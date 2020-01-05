@@ -1,0 +1,60 @@
+.board-section {
+    font-size: 1.1em;
+}
+
+body {
+    background-color: #F2D7E7;
+}
+
+.uttt-board {
+    margin: auto;
+    border: 0.5em;
+    border-spacing: 0;
+    background-color: #F27DB1;
+    border-radius: 3px;
+}
+
+.uttt-cell {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.ttt-board {
+    border-spacing: 0.5em;
+    border: 0;
+    padding: 0;
+    border-radius: 35px;
+}
+
+.ttt-cell {
+    width: 4em;
+    height: 4em;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    line-height: 0;
+    background-color: #F2D7E7;
+    /*box-shadow: 0.1em 0.1em 0.1em 0.1em #F878B8;*/
+    border-radius: 3px;
+}
+
+svg {
+    width: inherit;
+    height: inherit;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.nought {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.cross {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
