@@ -2,15 +2,19 @@
     font-size: 1.1em;
 }
 
+.lozung {
+    color: aqua;
+}
+
 body {
-    background-color: #F2D7E7;
+    background-color: #0F1E33;
 }
 
 .uttt-board {
     margin: auto;
     border: 0.5em;
     border-spacing: 0;
-    background-color: #F27DB1;
+    background-color: #102036;
     border-radius: 3px;
 }
 
@@ -34,7 +38,7 @@ body {
     border: 0;
     padding: 0;
     line-height: 0;
-    background-color: #F2D7E7;
+    background-color: #172f4e;
     /*box-shadow: 0.1em 0.1em 0.1em 0.1em #F878B8;*/
     border-radius: 3px;
 }
