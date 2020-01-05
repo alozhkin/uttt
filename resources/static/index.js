@@ -49,7 +49,7 @@ function onCellClick(event) {
 }
 
 function onMiddleClick(event) {
-    event.target.innerHTML = '<svg viewBox="0 0 50 50"><circle class="nought" cx="25" cy="25" r="16" stroke="#47FF0A"' +
+    event.target.innerHTML = '<svg viewBox="0 0 50 50"><circle class="nought" cx="25" cy="25" r="16" stroke="#2bf042"' +
         ' fill="transparent" stroke-width="5"/></svg>';
     return false;
 }
