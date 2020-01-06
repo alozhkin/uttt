@@ -29,7 +29,8 @@ for (let j = 0; j < 3; j++) {
     const tr = document.createElement('tr');
     for (let k = 0; k < 3; k++) {
         const td = document.createElement('td');
-        td.appendChild(createTable());
+        if (k === 0 && j === 0) td.appendChild(temp());
+        else td.appendChild(createTable());
         td.className = 'uttt-cell';
         tr.appendChild(td);
     }
@@ -48,6 +49,13 @@ function onCellClick(event) {
     return false;
 }
 
+$(document).ready(function () {
+    $('button').on('click', function() {
+        $('ttt-cell').removeClass('highlighted');
+        $(this).addClass('highlighted');
+    });
+});
+
 function onMiddleClick(event) {
     event.target.innerHTML = '<svg viewBox="0 0 50 50"><circle class="nought" cx="25" cy="25" r="16" stroke="#2bf042"' +
         ' fill="transparent" stroke-width="5"/></svg>';
@@ -62,6 +70,30 @@ function createTable() {
         for (let k = 0; k < 3; k++) {
             const td = document.createElement('td');
             td.className = 'ttt-cell';
+            td.addEventListener('click', onCellClick);
+            td.addEventListener('auxclick', onMiddleClick);
+            tr.appendChild(td);
+            // const button = document.createElement('button');
+            // button.type = 'button';
+            // button.className = 'ttt-cell';
+            // button.addEventListener('click', onCellClick);
+            // button.addEventListener('auxclick', onMiddleClick);
+            // td.appendChild(button);
+            // tr.appendChild(td);
+        }
+        table.appendChild(tr);
+    }
+    return table;
+}
+
+function temp() {
+    const table = document.createElement('table');
+    table.className = "ttt-board";
+    for (let j = 0; j < 3; j++) {
+        const tr = document.createElement('tr');
+        for (let k = 0; k < 3; k++) {
+            const td = document.createElement('td');
+            td.className = 'ttt-cell gloomy';
             td.addEventListener('click', onCellClick);
             td.addEventListener('auxclick', onMiddleClick);
             tr.appendChild(td);
