@@ -43,8 +43,8 @@ board.appendChild(utttTable);
 
 function onCellClick(event) {
     event.target.innerHTML = '<svg viewBox="0 0 50 50">' +
-        '<line class="cross" x1="10" x2="40" y1="10" y2="40" stroke="#A11C40" fill="transparent" stroke-width="5"/>' +
-        '<line class="cross" x1="40" x2="10" y1="10" y2="40" stroke="#A11C40" fill="transparent" stroke-width="5"/>' +
+        '<line class="cross" x1="10" x2="40" y1="10" y2="40" stroke="#A30022" fill="transparent" stroke-width="5"/>' +
+        '<line class="cross" x1="40" x2="10" y1="10" y2="40" stroke="#A30022" fill="transparent" stroke-width="5"/>' +
         '</svg>';
     highlight(event.target);
     return false;
@@ -56,7 +56,7 @@ function highlight(target) {
 }
 
 function onMiddleClick(event) {
-    event.target.innerHTML = '<svg viewBox="0 0 50 50"><circle class="nought" cx="25" cy="25" r="16" stroke="#22BA33"' +
+    event.target.innerHTML = '<svg viewBox="0 0 50 50"><circle class="nought" cx="25" cy="25" r="16" stroke="#1DA828"' +
         ' fill="transparent" stroke-width="5"/></svg>';
     highlight(event.target);
     return false;

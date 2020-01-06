@@ -11,12 +11,8 @@ button::-moz-focus-inner {
     font-size: 1.1em;
 }
 
-.lozung {
-    color: aqua;
-}
-
 body {
-    background-color: #050E24;
+    background-color: #030724;
 }
 
 .uttt-board {
@@ -45,7 +41,7 @@ body {
     height: 4em;
     padding: 0;
     line-height: 0;
-    background-color: #071A36;
+    background-color: #0E1736;
     /*box-shadow: 0.1em 0.1em 0.1em 0.1em #F878B8;*/
     border-radius: 3px;
     margin: auto;
@@ -53,16 +49,12 @@ body {
     border: 0.2em solid transparent;
 }
 
-:target {
-    background-color: hotpink;
-}
-
 .highlighted-cell {
-    border-color: hotpink;
+    border-color: #9C9513;
 }
 
 .gloomy {
-    background-color: #172D4D;
+    background-color: #15214F;
 }
 
 svg {
@@ -92,8 +84,8 @@ svg {
     margin: 0 10px 18px 0;
     font: 1em "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: bold;
-    color: #2D5D9C;
-    border: 0.2em solid #2D5D9C;
+    color: #284099;
+    border: 0.2em solid #284099;
     border-radius: 3px;
 }
 
@@ -102,11 +94,11 @@ svg {
 }
 
 .blue-button:hover {
-    border: 0.2em solid #438BE8;
-    color: #438BE8;
+    border: 0.2em solid #456AFF;
+    color: #456AFF;
 }
 
 .blue-button:focus {
-    border: 0.2em solid #3165A8;
-    color: #3165A8;
+    color: #1DA828;
+    border: 0.2em solid #1DA828;
 }
