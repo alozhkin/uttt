@@ -1,4 +1,4 @@
-/*#2D5D9C #102036 hotpink*/
+/*#2D5D9C #102036 hotpink 0AC2FF 2bf042*/
 
 button:active, button:focus {
     outline: none;
@@ -50,18 +50,19 @@ body {
     border-radius: 3px;
     margin: auto;
     box-sizing: border-box;
+    border: 0.2em solid transparent;
 }
 
 :target {
     background-color: hotpink;
 }
 
-.highlighted {
-    border: 0.2em solid hotpink;
+.highlighted-cell {
+    border-color: hotpink;
 }
 
 .gloomy {
-    background-color: #23497A;
+    background-color: #1F406B;
 }
 
 svg {
