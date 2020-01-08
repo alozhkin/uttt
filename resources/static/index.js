@@ -31,6 +31,7 @@ for (let j = 0; j < 3; j++) {
         const td = document.createElement('td');
         if (k === 1 && j === 2) td.appendChild(temp());
         else if (k === 2 && j === 1) td.appendChild(foo());
+        else if (k === 0 && j === 1) td.appendChild(cross());
         else td.appendChild(createTable());
         td.className = 'uttt-cell';
         tr.appendChild(td);
@@ -106,17 +107,28 @@ function temp() {
 function foo() {
     const table = document.createElement('table');
     table.className = "ttt-board";
-    for (let j = 0; j < 3; j++) {
-        const tr = document.createElement('tr');
-        for (let k = 0; k < 3; k++) {
-            const td = document.createElement('td');
-            td.className = 'ttt-cell temp';
-            td.addEventListener('click', onCellClick);
-            td.addEventListener('auxclick', onMiddleClick);
-            tr.appendChild(td);
-        }
-        table.appendChild(tr);
-    }
+    const tr = document.createElement('tr');
+    const td = document.createElement('td');
+    td.className = 'over';
+    td.innerHTML = '<svg viewBox="0 0 50 50">\n' +
+        '    <circle class="nought" cx="25" cy="25" r="16" stroke="#1DA828" fill="transparent" stroke-width="5"/>\n' +
+        '</svg>';
+    tr.appendChild(td);
+    table.appendChild(tr);
     return table;
 }
 
+function cross() {
+    const table = document.createElement('table');
+    table.className = "ttt-board";
+    const tr = document.createElement('tr');
+    const td = document.createElement('td');
+    td.className = 'over';
+    td.innerHTML = '<svg viewBox="0 0 50 50">' +
+        '<line class="cross" x1="10" x2="40" y1="10" y2="40" stroke="#A30022" fill="transparent" stroke-width="5"/>' +
+        '<line class="cross" x1="40" x2="10" y1="10" y2="40" stroke="#A30022" fill="transparent" stroke-width="5"/>' +
+        '</svg>';
+    tr.appendChild(td);
+    table.appendChild(tr);
+    return table;
+}

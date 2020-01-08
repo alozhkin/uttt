@@ -5,30 +5,50 @@
     <title>Main page</title>
 </head>
 <body>
-<nav>
-    <form action="">
-        <button class="nav-button blue-button" type="button">
-            Log in
-        </button>
-        <button class="nav-button blue-button" type="button">
-            Sign up
-        </button>
-    </form>
-</nav>
+<header hidden>
+    <nav>
+        <form action="">
+            <button class="nav-button green-button" type="button">
+                Dark mode
+            </button>
+            <button class="nav-button blue-button" type="button">
+                Rules
+            </button>
+            <button class="nav-button blue-button" type="button">
+                Log in
+            </button>
+            <button class="nav-button blue-button" type="button">
+                Sign up
+            </button>
+        </form>
+    </nav>
+</header>
 <section class="login-section">
-    <label>
-        <form action="" id="login-form" hidden>
-            <input type="text" name="username" placeholder="Enter your username">
-            <input type="password" name="password" placeholder="Enter your password">
-            <input type="submit" class="login-button" value="Log in">
+    <div class="form-div">
+        <form action="" id="login-form" class="login-form">
+            <h1>Log in</h1>
+            <div class="form-group">
+                <label for="form-1" class="login-label">Username</label>
+                <input id="form-1" class="form-control form-button" type="text" name="username" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="form-2" class="login-label">Password</label>
+                <input id="form-2" class="form-control form-button" type="text" name="password" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <input type="submit" class="form-button login-button blue-button" value="Log in">
+            </div>
             <p id="error-text" hidden>Wrong login or password</p>
         </form>
-    </label>
+    </div>
 </section>
-<section class="board-section">
+<section class="board-section" hidden>
 <!--        <circle cx="25" cy="75" r="20" stroke="red" fill="transparent" stroke-width="5"/>-->
 <!--        #<line x1="10" x2="50" y1="110" y2="150" stroke="orange" fill="transparent" stroke-width="5"/>-->
 </section>
+<dialog>
+    <button>Shut up</button>
+</dialog>
 <script type="text/javascript" src="/static/index.js"></script>
 <link rel="stylesheet" href="/static/style.css">
 </body>

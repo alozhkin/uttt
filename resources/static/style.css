@@ -17,23 +17,26 @@ body {
 
 .uttt-board {
     margin: auto;
-    border: 0.5em;
-    border-spacing: 0.5em;
     background-color: inherit;
     border-radius: 3px;
+    box-sizing: border-box;
+    border-spacing: 1em;
 }
 
 .uttt-cell {
-    margin: 0;
     border: 0;
     padding: 0;
 }
 
 .ttt-board {
+    margin: -0.5em -0.5em;
     border-spacing: 0.5em;
+    height: 14em;
+    width: 14em;
     border: 0;
     padding: 0;
     border-radius: 35px;
+    box-sizing: border-box;
 }
 
 .ttt-cell {
@@ -42,8 +45,7 @@ body {
     padding: 0;
     line-height: 0;
     background-color: #0E1736;
-    /*box-shadow: 0.1em 0.1em 0.1em 0.1em #F878B8;*/
-    border-radius: 3px;
+    border-radius: 5px;
     margin: auto;
     box-sizing: border-box;
     border: 0.2em solid transparent;
@@ -60,7 +62,8 @@ body {
 svg {
     width: 100%;
     height: 100%;
-    margin: 0;
+    display: block;
+    margin: auto;
     border: 0;
     padding: 0;
 }
@@ -81,15 +84,16 @@ svg {
     /*height: 3em;*/
     /*width: 6em;*/
     padding: 0.7em 1.3em;
-    margin: 0 10px 18px 0;
+    margin: 5px 10px 18px 0;
     font: 1em "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: bold;
-    color: #284099;
-    border: 0.2em solid #284099;
     border-radius: 3px;
+    border: 0.2em solid;
 }
 
 .blue-button {
+    color: #284099;
+    border-color: #284099;
     background-color: inherit;
 }
 
@@ -102,3 +106,94 @@ svg {
     color: #1DA828;
     border: 0.2em solid #1DA828;
 }
+
+.green-button {
+    color: #1A9925;
+    border: 0.2em solid #1A9925;
+    background-color: inherit;
+}
+
+.green-button:hover {
+    border: 0.2em solid #2BFF3D;
+    color: #2BFF3D;
+}
+
+.green-button:focus {
+    color: #990021;
+    border: 0.2em solid #990021;
+}
+
+.red-button {
+    color: #990021;
+    border: 0.2em solid #990021;
+    background-color: inherit;
+}
+
+.red-button:hover {
+    border: 0.2em solid #FF0037;
+    color: #FF0037;
+}
+
+.red-button:focus {
+    color: #1A9925;
+    border: 0.2em solid #1A9925;
+}
+
+nav {
+    float: right;
+}
+
+header:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+.login-form {
+    width: 22em;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0E1736;
+    padding: 1.5em;
+    border-radius: 3px;
+}
+
+.form-button {
+    height: 2.5rem;
+    background-color: inherit;
+    border: 0.05rem solid;
+    border-radius: 3px;
+    font: 1.2em "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 100%;
+}
+
+.form-control {
+    border-color: #456AFF;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #456AFF;
+}
+
+.form-group {
+    margin: 1.5em 2em;
+}
+
+h1 {
+    color: #456AFF;
+    font: 1.7em "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 1.4rem 2rem 2.4rem;
+}
+
+.login-label {
+    color: #456AFF;
+    margin: 0.4rem 0;
+    font: 1.1em "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: block;
+}
+
+.login-button {
+    margin: 0.6em 0;
+}
+/*todo поменять цвет? сделать ощущение приподнятости*/
