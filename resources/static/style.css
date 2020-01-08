@@ -7,6 +7,14 @@ button::-moz-focus-inner {
     border: 0;
 }
 
+input:active, input:focus {
+    outline: none;
+}
+
+input::-moz-focus-inner {
+    border: 0;
+}
+
 .board-section {
     font-size: 1.1em;
 }
@@ -155,9 +163,10 @@ header:after {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #0E1736;
+    background-color: #040B38;
     padding: 1.5em;
     border-radius: 3px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.2),0 1px 5px 0 rgba(0,0,0,0.12);
 }
 
 .form-button {
@@ -196,4 +205,10 @@ h1 {
 .login-button {
     margin: 0.6em 0;
 }
-/*todo поменять цвет? сделать ощущение приподнятости*/
+
+/*todo сбрасывать фокус с кнопки при неудачной авторизации*/
+#error-text {
+    color: #FF0037;
+    margin: 0.4rem 0;
+    font: 1.1em "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
