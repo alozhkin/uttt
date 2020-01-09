@@ -207,8 +207,83 @@ h1 {
 }
 
 /*todo сбрасывать фокус с кнопки при неудачной авторизации*/
-#error-text {
+.error-text {
     color: #FF0037;
     margin: 0.4rem 0;
     font: 1.1em "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+.close-button {
+    float: right;
+    width: 4em;
+    height: 4em;
+    padding: 0;
+    border-radius: 3px;
+    display: block;
+}
+
+.rules {
+    margin-top: 6em;
+}
+
+.radio-toolbar {
+    display: block;
+    margin: 3em 0;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.radio-input {
+    display: none;
+}
+
+.rules-radio-button {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-color: #284099;
+    border-color: transparent;
+    border-radius: 50%;
+    margin: 0 0.2em;
+}
+
+.radio-toolbar input[type="radio"]:checked+label {
+    background-color: #456AFF;
+}
+
+.slideout {
+    animation: 2s slideout;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideout {
+    from {
+        margin-left: 0;
+    }
+
+    to {
+        margin-left: -200%;
+    }
+}
+
+.right-button {
+    float: right;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
+    width: 3em;
+    padding: 0;
 }

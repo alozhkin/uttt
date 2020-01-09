@@ -29,10 +29,10 @@ for (let j = 0; j < 3; j++) {
     const tr = document.createElement('tr');
     for (let k = 0; k < 3; k++) {
         const td = document.createElement('td');
-        if (k === 1 && j === 2) td.appendChild(temp());
-        else if (k === 2 && j === 1) td.appendChild(foo());
-        else if (k === 0 && j === 1) td.appendChild(cross());
-        else td.appendChild(createTable());
+        if (k === 0 && j === 0) td.appendChild(temp());
+        // else if (k === 2 && j === 1) td.appendChild(foo());
+        // else if (k === 0 && j === 1) td.appendChild(cross());
+        else td.appendChild(createTable(j * 3 + k));
         td.className = 'uttt-cell';
         tr.appendChild(td);
     }
@@ -63,9 +63,20 @@ function onMiddleClick(event) {
     return false;
 }
 
-function createTable() {
+function createTable(counter) {
+    const boards = [
+        'top-left-board',
+        'top-center-board',
+        'top-right-board',
+        'middle-left-board',
+        'middle-center-board',
+        'middle-right-board',
+        'bottom-left-board',
+        'bottom-center-board',
+        'bottom-right-board',
+    ];
     const table = document.createElement('table');
-    table.className = "ttt-board";
+    table.className = "ttt-board " + boards[counter];
     for (let j = 0; j < 3; j++) {
         const tr = document.createElement('tr');
         for (let k = 0; k < 3; k++) {
@@ -74,13 +85,6 @@ function createTable() {
             td.addEventListener('click', onCellClick);
             td.addEventListener('auxclick', onMiddleClick);
             tr.appendChild(td);
-            // const button = document.createElement('button');
-            // button.type = 'button';
-            // button.className = 'ttt-cell';
-            // button.addEventListener('click', onCellClick);
-            // button.addEventListener('auxclick', onMiddleClick);
-            // td.appendChild(button);
-            // tr.appendChild(td);
         }
         table.appendChild(tr);
     }
@@ -132,3 +136,70 @@ function cross() {
     table.appendChild(tr);
     return table;
 }
+
+//MODAL RULES
+
+Array.from(document.getElementsByClassName('rules-button')).forEach(button => {
+    button.addEventListener('click', function (event) {
+        Array.from(document.getElementsByClassName('modal')).forEach(it => it.hidden = false)
+    })
+});
+
+const a = document.getElementsByClassName('rules-board')[0];
+const r = document.createElement('table');
+
+r.className = 'uttt-board';
+for (let j = 0; j < 3; j++) {
+    const tr = document.createElement('tr');
+    for (let k = 0; k < 3; k++) {
+        const td = document.createElement('td');
+        td.appendChild(createRulesTable(j * 3 + k));
+        td.className = 'uttt-cell';
+        tr.appendChild(td);
+    }
+    r.appendChild(tr);
+}
+a.appendChild(r);
+
+function createRulesTable(counter) {
+    const boards = [
+        'top-left-board',
+        'top-center-board',
+        'top-right-board',
+        'middle-left-board',
+        'middle-center-board',
+        'middle-right-board',
+        'bottom-left-board',
+        'bottom-center-board',
+        'bottom-right-board',
+    ];
+    const table = document.createElement('table');
+    table.className = "ttt-board " + boards[counter];
+    for (let j = 0; j < 3; j++) {
+        const tr = document.createElement('tr');
+        for (let k = 0; k < 3; k++) {
+            const td = document.createElement('td');
+            td.className = 'ttt-cell';
+            tr.appendChild(td);
+        }
+        table.appendChild(tr);
+    }
+    return table;
+}
+
+const closeButton = Array.from(document.getElementsByClassName('close-button'))[0];
+
+closeButton.addEventListener('click', function (event) {
+    Array.from(document.getElementsByClassName('modal')).forEach(it => it.hidden = true)
+});
+
+closeButton.innerHTML = '<svg viewBox="0 0 50 50">' +
+    '<line class="cross" x1="10" x2="40" y1="10" y2="40" stroke="#A30022" fill="transparent" stroke-width="5"/>' +
+    '<line class="cross" x1="40" x2="10" y1="10" y2="40" stroke="#A30022" fill="transparent" stroke-width="5"/>' +
+    '</svg>';
+
+window.onclick = function(event) {
+    if (event.target === document.getElementsByClassName('modal')[0]) {
+        event.target.hidden = true;
+    }
+};
