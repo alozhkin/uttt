@@ -1,24 +1,6 @@
 
-const form = document.getElementById('login-form');
-form.addEventListener('submit', function (event) {
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', '/login', true);
-    const username = encodeURIComponent(form.elements['username'].value);
-    const password = encodeURIComponent(form.elements['password'].value);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState !== 4) return;
-        if (xhr.status === 200) {
-            form.hidden = true;
-        } else {
-            const errorText = document.getElementById("error-text");
-            errorText.hidden = false
-        }
-    };
-    xhr.send("username=" + username + "&password=" + password);
-
-    event.preventDefault();
-    return false;
+Array.from(document.getElementsByClassName('login-form')).forEach(it => {
+    it.addEventListener('submit', formListener());
 });
 
 const board = Array.from(document.getElementsByClassName('board-section'))[0];
@@ -41,6 +23,28 @@ for (let j = 0; j < 3; j++) {
 
 board.appendChild(utttTable);
 //A11C40
+
+function formListener(event) {
+    // const xhr = new XMLHttpRequest();
+    // xhr.open('POST', '/login', true);
+    // let form = document.getElementsByClassName('login-form')[0];
+    // const username = encodeURIComponent(form.elements['username'].value);
+    // const password = encodeURIComponent(form.elements['password'].value);
+    // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    // xhr.onreadystatechange = function () {
+    //     if (xhr.readyState !== 4) return;
+    //     if (xhr.status === 200) {
+    //         form.hidden = true;
+    //     } else {
+    //         const errorText = document.getElementById("error-text");
+    //         errorText.hidden = false
+    //     }
+    // };
+    // xhr.send("username=" + username + "&password=" + password);
+    //
+    // event.preventDefault();
+    // return false;
+}
 
 function onCellClick(event) {
     event.target.innerHTML = '<svg viewBox="0 0 50 50">' +
@@ -193,13 +197,15 @@ closeButton.addEventListener('click', function (event) {
     Array.from(document.getElementsByClassName('modal')).forEach(it => it.hidden = true)
 });
 
-closeButton.innerHTML = '<svg viewBox="0 0 50 50">' +
-    '<line class="cross" x1="10" x2="40" y1="10" y2="40" stroke="#A30022" fill="transparent" stroke-width="5"/>' +
-    '<line class="cross" x1="40" x2="10" y1="10" y2="40" stroke="#A30022" fill="transparent" stroke-width="5"/>' +
-    '</svg>';
+// closeButton.innerHTML = '<svg viewBox="0 0 50 50">' +
+//     '<line class="cross" x1="10" x2="40" y1="10" y2="40" stroke="#A30022" fill="transparent" stroke-width="5"/>' +
+//     '<line class="cross" x1="40" x2="10" y1="10" y2="40" stroke="#A30022" fill="transparent" stroke-width="5"/>' +
+//     '</svg>';
 
 window.onclick = function(event) {
     if (event.target === document.getElementsByClassName('modal')[0]) {
         event.target.hidden = true;
     }
 };
+
+let slidePointer = 0;

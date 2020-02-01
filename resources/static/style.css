@@ -229,8 +229,8 @@ h1 {
     float: right;
     width: 4em;
     height: 8%;
+    margin-top: 0.4em;
     padding: 0;
-    margin: 0;
     border-radius: 3px;
     display: block;
 }
@@ -240,10 +240,12 @@ h1 {
     margin: 3em 0;
 }
 
-.right-button {
+.next-slide-button {
     height: 85%;
     width: 4em;
     padding: 0;
+    margin: 0.4em;
+    border-color: transparent;
 }
 
 .flex-wrapper {
@@ -268,7 +270,7 @@ h1 {
     justify-content: center;
 }
 
-.modal-right {
+.next-slide-div {
     display: flex;
     flex-direction: column;
     align-self: stretch;

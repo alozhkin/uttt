@@ -5,115 +5,83 @@
     <title>Main page</title>
 </head>
 <body>
-<header>
-    <nav>
-        <form action="">
-            <button class="nav-button blue-button back-button" type="button" hidden>
-                Back
+<div class="layout">
+    <header>
+        <form action="" class="buttons-container">
+            <button class="nav-button alpha-color-button" type="button">
+                Dark mode
             </button>
-            <div class="main-screen-buttons" >
-                <button class="nav-button green-button" type="button">
-                    Dark mode
-                </button>
-                <button class="nav-button blue-button rules-button" type="button">
-                    Rules
-                </button>
-                <button class="nav-button blue-button" type="button">
-                    Log in
-                </button>
-                <button class="nav-button blue-button" type="button">
-                    Sign up
-                </button>
+            <button class="nav-button main-color-button rules-button" type="button">
+                Rules
+            </button>
+            <button class="nav-button main-color-button" type="button">
+                Log in
+            </button>
+            <button class="nav-button main-color-button" type="button">
+                Sign up
+            </button>
+        </form>
+    </header>
+    <section class="entry-section">
+        <form class="entry-form">
+            <div class="entry-form-header">
+                <h1 class="entry-form-header-text">Log in</h1>
+            </div>
+            <div class="entry-form-group">
+                <label for="login-form-1" class="entry-label entry-form-text">Username</label>
+                <input id="login-form-1" class="entry-form-input entry-form-element" type="text" name="username" autocomplete="off">
+            </div>
+            <div class="entry-form-group">
+                <label for="signup-form-3" class="entry-label entry-form-text">Email</label>
+                <input id="signup-form-3" class="entry-form-input entry-form-element" type="email" name="password" autocomplete="off">
+            </div>
+            <div class="entry-form-group">
+                <label for="login-form-2" class="entry-label entry-form-text">Password</label>
+                <input id="login-form-2" class="entry-form-input entry-form-element" type="password" name="password" autocomplete="off">
+            </div>
+            <div class="entry-form-group">
+                <input type="button" class="entry-form-button entry-form-element" value="Log in">
+            </div>
+            <div class="entry-form-group" hidden>
+                <p class="error-text entry-form-text">Wrong login or password</p>
             </div>
         </form>
-    </nav>
-</header>
-<section class="login-section" hidden>
-    <div class="form-div">
-        <form action="" id="login-form" class="login-form">
-            <h1>Log in</h1>
-            <div class="form-group">
-                <label for="login-form-1" class="login-label">Username</label>
-                <input id="login-form-1" class="form-control form-button" type="text" name="username" autocomplete="off">
-            </div>
-            <div class="form-group">
-                <label for="login-form-2" class="login-label">Password</label>
-                <input id="login-form-2" class="form-control form-button" type="password" name="password" autocomplete="off">
-            </div>
-            <div class="form-group">
-                <input type="button" class="form-button login-button blue-button" value="Log in">
-            </div>
-            <div class="form-group">
-                <p class="error-text" hidden>Wrong login or password</p>
-            </div>
-        </form>
+    </section>
+    <section class="board-section"></section>
+</div>
+<div class="modal"><section class="rules-section">
+    <button class="close-button nav-button main-color-button">
+        <svg viewBox="0 0 50 50">
+            <line class="cross" x1="10" x2="40" y1="10" y2="40" stroke="#A30022" fill="transparent" stroke-width="5"/>
+            <line class="cross" x1="40" x2="10" y1="10" y2="40" stroke="#A30022" fill="transparent" stroke-width="5"/>
+        </svg>
+    </button>
+    <button class="left-button slider-button">
+        <svg viewBox="0 0 50 80">
+            <line class="cross" x1="40" x2="10" y1="10" y2="41" stroke="#A30022" fill="transparent" stroke-width="5"/>
+            <line class="cross" x1="40" x2="10" y1="70" y2="39" stroke="#A30022" fill="transparent" stroke-width="5"/>
+        </svg>
+    </button>
+    <button class="right-button slider-button">
+        <svg viewBox="0 0 50 80">
+            <line class="cross" x1="10" x2="40" y1="10" y2="41" stroke="#A30022" fill="transparent" stroke-width="5"/>
+            <line class="cross" x1="10" x2="40" y1="70" y2="39" stroke="#A30022" fill="transparent" stroke-width="5"/>
+        </svg>
+    </button>
+    <div class="rules-board"></div>
+    <div class="radio-toolbar">
+        <input type="radio" id="radio-1" value="1" name="rules-radio" class="radio-input">
+        <label for="radio-1" class="rules-radio-button"></label>
+        <input type="radio" id="radio-2" value="2" name="rules-radio" class="radio-input">
+        <label for="radio-2" class="rules-radio-button"></label>
+        <input type="radio" id="radio-3" value="2" name="rules-radio" class="radio-input">
+        <label for="radio-3" class="rules-radio-button"></label>
+        <input type="radio" id="radio-4" value="2" name="rules-radio" class="radio-input">
+        <label for="radio-4" class="rules-radio-button"></label>
     </div>
 </section>
-<section class="signup-section" hidden>
-    <div class="form-div">
-        <form action="" class="login-form">
-            <h1>Sign up</h1>
-            <div class="form-group">
-                <label for="signup-form-1" class="login-label">Username</label>
-                <input id="signup-form-1" class="form-control form-button" type="text" name="username" autocomplete="off">
-            </div>
-            <div class="form-group">
-                <label for="signup-form-2" class="login-label">Password</label>
-                <input id="signup-form-2" class="form-control form-button" type="password" name="password" autocomplete="off">
-            </div>
-            <div class="form-group">
-                <label for="signup-form-3" class="login-label">Email</label>
-                <input id="signup-form-3" class="form-control form-button" type="email" name="password" autocomplete="off">
-            </div>
-            <div class="form-group">
-                <input type="button" class="form-button login-button blue-button" value="Log in">
-            </div>
-            <div class="form-group">
-                <p class="error-text" hidden>Something went wrong</p>
-            </div>
-        </form>
-    </div>
-</section>
-<section class="board-section"></section>
-<section class="rules-section">
-    <div class="modal" hidden>
-        <div class="modal-flex">
-            <div class="close-button-flex">
-                <button class="close-button nav-button blue-button" type="button"></button>
-            </div>
-            <div class="flex-wrapper">
-                <div class="modal-right">
-                    <button class="right-button nav-button blue-button" type="button">    <svg viewBox="0 0 50 80">
-                        <line class="cross" x1="10" x2="40" y1="10" y2="40" stroke="#A30022" fill="transparent" stroke-width="5"/>
-                        <line class="cross" x1="10" x2="40" y1="70" y2="40" stroke="#A30022" fill="transparent" stroke-width="5"/>
-                    </svg>
-                    </button>
-                </div>
-                <div class="rules">
-                    <div class="rules-board"></div>
-                    <div class="radio-toolbar">
-                        <input type="radio" id="radio-1" value="1" name="rules-radio" class="radio-input">
-                        <label for="radio-1" class="rules-radio-button"></label>
-                        <input type="radio" id="radio-2" value="2" name="rules-radio" class="radio-input">
-                        <label for="radio-2" class="rules-radio-button"></label>
-                        <input type="radio" id="radio-3" value="2" name="rules-radio" class="radio-input">
-                        <label for="radio-3" class="rules-radio-button"></label>
-                        <input type="radio" id="radio-4" value="2" name="rules-radio" class="radio-input">
-                        <label for="radio-4" class="rules-radio-button"></label>
-                    </div>
-                </div>
-                <div class="modal-right">
-                    <button class="right-button nav-button blue-button" type="button">    <svg viewBox="0 0 50 80">
-                        <line class="cross" x1="10" x2="40" y1="10" y2="40" stroke="#A30022" fill="transparent" stroke-width="5"/>
-                        <line class="cross" x1="10" x2="40" y1="70" y2="40" stroke="#A30022" fill="transparent" stroke-width="5"/>
-                    </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+</div>
 <script type="text/javascript" src="/static/index.js"></script>
-<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="/static/temp.css">
 </body>
 </html>

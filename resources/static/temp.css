@@ -1,0 +1,338 @@
+
+:root {
+    --main-color-bg: #030724;
+    --main-color-soft: #0E1736;
+    --main-color-soft-accent: #15214F;
+    --main-color-neutral: #284099;
+    --main-color-contrast: #3556CC;
+    --main-color-contrast-accent: #456AFF;
+
+    /*Это по сути темы, как бы их так сделать без лишнего кода*/
+    --alpha-color-neutral: #1A9925;
+    --alpha-color-contrast: #2BFF3D;
+
+    --beta-color-neutral: #990021;
+    --beta-color-contrast: #FF0037;
+
+    --highlight-color-neutral: #9C9513;
+
+    --login-form-bg-color: #040B38;
+
+    /*Они должны быть отдельно, так как ни с чем не связаны*/
+    --cross-color: #A30022;
+    --nought-color: #1DA828;
+}
+
+/*TODO разобраться потом: нужны ли мне все теги*/
+
+button:active, button:focus {
+    outline: none;
+}
+
+button::-moz-focus-inner {
+    border: 0;
+}
+
+input:active, input:focus {
+    outline: none;
+}
+
+input::-moz-focus-inner {
+    border: 0;
+}
+
+/*TODO при выборе кнопки login должна подсвечиваться её border а не margin*/
+html, body, section {
+    height: 100%;
+}
+
+body {
+    background-color: var(--main-color-bg);
+    margin: 0;
+}
+
+h1 {
+    font: 2em "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+
+/*Board*/
+
+
+.board-section {
+    font-size: 1.1em;
+}
+
+.uttt-board {
+    /*TODO мне кажется, что за расположение элементов должен отвечать контейнер*/
+    border-spacing: 1em;
+    margin: auto;
+}
+
+.uttt-cell {
+    padding: 0;
+}
+
+.ttt-board {
+    border-spacing: .5em;
+    /*чтобы у таблицы не было внешней границы и она корректно отображалась внутри другой таблицы*/
+    margin: -0.5em;
+}
+
+/*TODO сделать так, чтобы svg не учитывал размер border*/
+.ttt-cell {
+    background-color: var(--main-color-soft);
+    border: .2em solid transparent;
+    border-radius: 5px;
+    height: 4em;
+    /*чтобы не появлялось пустое пространство при добавлении элемента*/
+    line-height: 0;
+    padding: 0;
+    width: 4em;
+}
+
+
+/*Buttons*/
+
+
+.nav-button {
+    background-color: inherit;
+    border: 0.2em solid;
+    border-radius: 3px;
+    font: 1em "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    height: 2.9em;
+    margin: 0.33em 0.6em 1em 0;
+    padding: 0 1.3em;
+}
+
+.main-color-button {
+    border-color: var(--main-color-neutral);
+    color: var(--main-color-neutral);
+}
+
+/*TODO что-то вроде вложенности*/
+.main-color-button:hover {
+    border-color: var(--main-color-contrast-accent);
+    color: var(--main-color-contrast-accent);
+}
+
+.main-color-button:focus {
+    border-color: var(--alpha-color-neutral);
+    color: var(--alpha-color-neutral);
+}
+
+.alpha-color-button {
+    border-color: var(--alpha-color-neutral);;
+    color: var(--alpha-color-neutral);
+}
+
+.alpha-color-button:hover {
+    border-color: var(--alpha-color-contrast);
+    color: var(--alpha-color-contrast);
+}
+
+.alpha-color-button:focus {
+    border-color: var(--beta-color-neutral);
+    color: var(--beta-color-neutral);
+}
+
+.beta-color-button {
+    border-color: var(--beta-color-neutral);
+    color: var(--beta-color-neutral);
+}
+
+.beta-color-button:hover {
+    border-color: var(--beta-color-contrast);
+    color: var(--beta-color-contrast);
+}
+
+.beta-color-button:focus {
+    border-color: var(--alpha-color-neutral);;
+    color: var(--alpha-color-neutral);
+}
+
+
+/*Layouts*/
+
+
+.entry-section {
+    align-items: center;
+    /*display: flex;*/
+    /*height: 100%;*/
+    display: none;
+    justify-content: center;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+/*Entry form*/
+
+
+.entry-form {
+    background-color: var(--login-form-bg-color);
+    border-radius: 3px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.18),0 3px 1px -2px rgba(0,0,0,0.24),0 1px 5px 0 rgba(0,0,0,0.16);
+    margin-bottom: 5em;
+    padding: 4em 4em 2em;
+    width: 20em;
+}
+
+.entry-form-header {
+    margin-bottom: 3em;
+}
+
+.entry-form-group {
+    margin: 1.5em 0;
+}
+
+.entry-form-button {
+    margin-top: 0.6em;
+}
+
+.entry-form-element {
+    border: 0.05rem solid;
+    border-color: var(--main-color-contrast);
+    border-radius: 3px;
+    font: 1.2em "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 2.5em;
+    width: 100%;
+}
+
+
+.entry-form-input {
+    background-color: inherit;
+    /*чтобы не вываливалось вправо*/
+    box-sizing: border-box;
+    color: var(--main-color-contrast-accent);
+    padding: 0 .5em;
+}
+
+.entry-form-button {
+    background-color: var(--main-color-contrast);
+    border-color: var(--main-color-contrast);
+    color: inherit;
+}
+
+.entry-form-button:hover {
+    background-color: var(--main-color-contrast-accent);
+    border-color: var(--main-color-contrast-accent);
+}
+
+.entry-form-button:focus {
+    background-color: var(--alpha-color-neutral);
+    border-color: var(--alpha-color-neutral);
+}
+
+.entry-form-header-text {
+    color: var(--main-color-contrast);
+}
+
+.entry-form-text {
+    font: 1.1em "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.entry-label {
+    color: var(--main-color-contrast-accent);
+    margin: 0.4rem 0;
+}
+
+.error-text {
+    color: var(--beta-color-contrast)
+}
+
+
+/*Rules*/
+
+
+.rules-section {
+    display: grid;
+    grid-template-columns: 1em 4em auto 4em 1em;
+    grid-template-rows: 1em 4em auto 4em 1em;
+    grid-template-areas:
+            ". . . . ."
+            ". top-left top-center top-right ."
+            ". middle-left middle-center middle-right ."
+            ". bottom-left bottom-center bottom-right ."
+            ". . . . .";
+    justify-items: center;
+}
+
+.close-button {
+    border: .2em solid;
+    box-sizing: border-box;
+    grid-area: top-right;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.slider-button {
+    background-color: inherit;
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.right-button {
+    grid-area: middle-right;
+
+}
+
+.left-button {
+    grid-area: middle-left;
+}
+
+.rules-board {
+    display: flex;
+    grid-area: middle-center;
+    height: 100%;
+}
+
+.radio-toolbar {
+    grid-area: bottom-center;
+}
+
+.radio-input {
+    display: none;
+}
+
+.rules-radio-button {
+    background-color: var(--main-color-neutral);
+    border-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    height: 1em;
+    margin: 0 0.2em;
+    width: 1em;
+}
+
+.radio-toolbar input[type="radio"]:checked+label {
+    background-color: var(--main-color-contrast-accent);
+}
+
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}

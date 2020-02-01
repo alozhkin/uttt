@@ -42,6 +42,7 @@ fun Application.module() {
         static("static") {
             staticRootFolder = File("resources/static")
             file("style.css")
+            file("temp.css")
             file("index.js")
         }
         get("/") {
