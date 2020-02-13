@@ -23,8 +23,6 @@
     --nought-color: #1DA828;
 }
 
-/*TODO разобраться потом: нужны ли мне все теги*/
-
 button:active, button:focus {
     outline: none;
 }
@@ -41,7 +39,6 @@ input::-moz-focus-inner {
     border: 0;
 }
 
-/*TODO при выборе кнопки login должна подсвечиваться её border а не margin*/
 html, body, section {
     height: 100%;
 }
@@ -65,7 +62,6 @@ h1 {
 }
 
 .uttt-board {
-    /*TODO мне кажется, что за расположение элементов должен отвечать контейнер*/
     border-spacing: 1em;
     margin: auto;
 }
@@ -80,7 +76,6 @@ h1 {
     margin: -0.5em;
 }
 
-/*TODO сделать так, чтобы svg не учитывал размер border*/
 .ttt-cell {
     background-color: var(--main-color-soft);
     border: .2em solid transparent;
@@ -112,7 +107,6 @@ h1 {
     color: var(--main-color-neutral);
 }
 
-/*TODO что-то вроде вложенности*/
 .main-color-button:hover {
     border-color: var(--main-color-contrast-accent);
     color: var(--main-color-contrast-accent);
@@ -299,8 +293,28 @@ h1 {
 
 .rules-board {
     display: flex;
-    grid-area: middle-center;
     height: 100%;
+}
+
+.rules-slides-container {
+    grid-area: middle-center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    animation-duration: 2s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    to {
+        margin-left: -200%;
+    }
+}
+
+.rules-slide {
+    flex-shrink: 0;
+    height: 100%;
+    width: 100%;
 }
 
 .radio-toolbar {
@@ -326,13 +340,13 @@ h1 {
 }
 
 .modal {
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: hidden; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.8);
 }

@@ -12,8 +12,6 @@ for (let j = 0; j < 3; j++) {
     for (let k = 0; k < 3; k++) {
         const td = document.createElement('td');
         if (k === 0 && j === 0) td.appendChild(temp());
-        // else if (k === 2 && j === 1) td.appendChild(foo());
-        // else if (k === 0 && j === 1) td.appendChild(cross());
         else td.appendChild(createTable(j * 3 + k));
         td.className = 'uttt-cell';
         tr.appendChild(td);
@@ -22,28 +20,8 @@ for (let j = 0; j < 3; j++) {
 }
 
 board.appendChild(utttTable);
-//A11C40
 
 function formListener(event) {
-    // const xhr = new XMLHttpRequest();
-    // xhr.open('POST', '/login', true);
-    // let form = document.getElementsByClassName('login-form')[0];
-    // const username = encodeURIComponent(form.elements['username'].value);
-    // const password = encodeURIComponent(form.elements['password'].value);
-    // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    // xhr.onreadystatechange = function () {
-    //     if (xhr.readyState !== 4) return;
-    //     if (xhr.status === 200) {
-    //         form.hidden = true;
-    //     } else {
-    //         const errorText = document.getElementById("error-text");
-    //         errorText.hidden = false
-    //     }
-    // };
-    // xhr.send("username=" + username + "&password=" + password);
-    //
-    // event.preventDefault();
-    // return false;
 }
 
 function onCellClick(event) {
@@ -112,58 +90,31 @@ function temp() {
     return table;
 }
 
-function foo() {
-    const table = document.createElement('table');
-    table.className = "ttt-board";
-    const tr = document.createElement('tr');
-    const td = document.createElement('td');
-    td.className = 'over';
-    td.innerHTML = '<svg viewBox="0 0 50 50">\n' +
-        '    <circle class="nought" cx="25" cy="25" r="16" stroke="#1DA828" fill="transparent" stroke-width="5"/>\n' +
-        '</svg>';
-    tr.appendChild(td);
-    table.appendChild(tr);
-    return table;
-}
-
-function cross() {
-    const table = document.createElement('table');
-    table.className = "ttt-board";
-    const tr = document.createElement('tr');
-    const td = document.createElement('td');
-    td.className = 'over';
-    td.innerHTML = '<svg viewBox="0 0 50 50">' +
-        '<line class="cross" x1="10" x2="40" y1="10" y2="40" stroke="#A30022" fill="transparent" stroke-width="5"/>' +
-        '<line class="cross" x1="40" x2="10" y1="10" y2="40" stroke="#A30022" fill="transparent" stroke-width="5"/>' +
-        '</svg>';
-    tr.appendChild(td);
-    table.appendChild(tr);
-    return table;
-}
-
-//MODAL RULES
-
 Array.from(document.getElementsByClassName('rules-button')).forEach(button => {
-    button.addEventListener('click', function (event) {
+    button.addEventListener('click', function () {
         Array.from(document.getElementsByClassName('modal')).forEach(it => it.hidden = false)
     })
 });
 
-const a = document.getElementsByClassName('rules-board')[0];
-const r = document.createElement('table');
+Array.from(document.getElementsByClassName('rules-board')).forEach(it => f(it));
 
-r.className = 'uttt-board';
-for (let j = 0; j < 3; j++) {
-    const tr = document.createElement('tr');
-    for (let k = 0; k < 3; k++) {
-        const td = document.createElement('td');
-        td.appendChild(createRulesTable(j * 3 + k));
-        td.className = 'uttt-cell';
-        tr.appendChild(td);
+
+function f(a) {
+    const r = document.createElement('table');
+
+    r.className = 'uttt-board';
+    for (let j = 0; j < 3; j++) {
+        const tr = document.createElement('tr');
+        for (let k = 0; k < 3; k++) {
+            const td = document.createElement('td');
+            td.appendChild(createRulesTable(j * 3 + k));
+            td.className = 'uttt-cell';
+            tr.appendChild(td);
+        }
+        r.appendChild(tr);
     }
-    r.appendChild(tr);
+    a.appendChild(r);
 }
-a.appendChild(r);
 
 function createRulesTable(counter) {
     const boards = [
@@ -193,19 +144,12 @@ function createRulesTable(counter) {
 
 const closeButton = Array.from(document.getElementsByClassName('close-button'))[0];
 
-closeButton.addEventListener('click', function (event) {
+closeButton.addEventListener('click', function () {
     Array.from(document.getElementsByClassName('modal')).forEach(it => it.hidden = true)
 });
-
-// closeButton.innerHTML = '<svg viewBox="0 0 50 50">' +
-//     '<line class="cross" x1="10" x2="40" y1="10" y2="40" stroke="#A30022" fill="transparent" stroke-width="5"/>' +
-//     '<line class="cross" x1="40" x2="10" y1="10" y2="40" stroke="#A30022" fill="transparent" stroke-width="5"/>' +
-//     '</svg>';
 
 window.onclick = function(event) {
     if (event.target === document.getElementsByClassName('modal')[0]) {
         event.target.hidden = true;
     }
 };
-
-let slidePointer = 0;

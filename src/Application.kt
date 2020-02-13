@@ -21,7 +21,7 @@ import kotlin.Exception
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
-@Suppress("unused") // Referenced in application.conf
+@Suppress("unused")
 fun Application.module() {
 
     install(CallLogging)
@@ -64,7 +64,6 @@ fun Routing.login() {
         val password = params["password"] ?: throw AuthenticationException()
         database.validateUser(username, password)
         val cookie = MySession(createAuthToken(username))
-        //todo здесь должны быть угловые скобочки
         call.sessions.set("SESSION", cookie)
         call.respond(HttpStatusCode.OK)
     }
